@@ -1,4 +1,5 @@
 body {
+  background-color: hsl(0, 0%, 65%);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,4 +11,97 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+* {
+  user-select: none;
+}
+#calc {
+  border: 5px outset #3c3b3b;
+  border-right: 10px outset #3c3b3b;
+  border-bottom: 10px outset #3c3b3b;
+  width: 500px;
+  display: grid;
+  margin: 30px auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 20px;
+  background: #353535;
+  box-shadow: -1px -1px 12px 1px #505050;
+}
+
+#calc-display {
+  cursor: default;
+  border: 7px inset #3c3b3b;
+  outline-offset: 0px;
+  margin: 3px;
+  grid-area: 1 / 1 / 2 / 4;
+  font-family: "LCD", arial;
+  font-size: 60px;
+  background-color: #bacfc0;
+  text-align: right;
+  min-height: 60px;
+}
+.calc-numb-btns {
+  writing-mode:rl-tb;
+  color: white;
+  display: grid;
+grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(4, 100px);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+direction: rtl;
+}
+
+.calc-numb-btns > div:nth-child(10) {
+  grid-area: 4 / 1 / 5 / 3;
+}
+.calc-oper-btns {
+  grid-area: 2 / 3 / 3 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  color: white;
+  
+}
+.calc-btn {
+  cursor: pointer;
+  line-height: 71px;
+  text-align: center;
+  font-size: 40px;
+  border: 5px outset #3c3b3b;
+  border-right: 8px outset #3c3b3b;
+  border-bottom: 8px outset #3c3b3b;
+  background: rgb(70, 70, 70);
+  background: radial-gradient(
+    circle,
+    rgba(70, 70, 70, 1) 0%,
+    rgba(85, 85, 85, 1) 91%,
+    rgba(70, 70, 70, 1) 100%
+  );
+  margin: 3px;
+}
+.calc-btn:hover {
+  background: radial-gradient(
+    circle,
+    rgba(70, 70, 70, 1) 0%,
+    rgba(65, 65, 65, 1) 91%,
+    rgba(70, 70, 70, 1) 100%
+  );
+}
+.calc-btn:active {
+  background: radial-gradient(
+    circle,
+    rgba(60, 60, 60, 1) 0%,
+    rgba(75, 75, 75, 1) 91%,
+    rgba(60, 60, 60, 1) 100%
+  );
+  border: 4px inset #3c3b3b;
+}
+@font-face {
+  font-family: "LCD";
+  src: url("./fonts/lcd.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
